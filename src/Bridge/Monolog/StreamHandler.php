@@ -136,8 +136,9 @@ if (version_compare(InstalledVersions::getVersion('monolog/monolog'), '3.0.0') >
                 $url = $this->url;
                 if ($url === null || $url === '') {
                     throw new LogicException(
-                        'Missing stream url, the stream can not be opened. This may be caused by a premature call to close().' . Utils::getRecordMessageForException(
-                            $record
+                        sprintf(
+                            'Missing stream url, the stream can not be opened. This may be caused by a premature call to close().%s',
+                            Utils::getRecordMessageForException($record)
                         )
                     );
                 }
@@ -161,10 +162,10 @@ if (version_compare(InstalledVersions::getVersion('monolog/monolog'), '3.0.0') >
 
                     throw new UnexpectedValueException(
                         sprintf(
-                            'The stream or file "%s" could not be opened in append mode: ' . $this->errorMessage,
-                            $url
-                        ) . Utils::getRecordMessageForException(
-                            $record
+                            'The stream or file "%s" could not be opened in append mode: %s%s',
+                            $url,
+                            $this->errorMessage,
+                            Utils::getRecordMessageForException($record)
                         )
                     );
                 }
@@ -389,8 +390,9 @@ if (version_compare(InstalledVersions::getVersion('monolog/monolog'), '3.0.0') >
                 $url = $this->url;
                 if ($url === null || $url === '') {
                     throw new LogicException(
-                        'Missing stream url, the stream can not be opened. This may be caused by a premature call to close().' . Utils::getRecordMessageForException(
-                            $record
+                        sprintf(
+                            'Missing stream url, the stream can not be opened. This may be caused by a premature call to close().%s',
+                            Utils::getRecordMessageForException($record)
                         )
                     );
                 }
@@ -413,10 +415,10 @@ if (version_compare(InstalledVersions::getVersion('monolog/monolog'), '3.0.0') >
 
                     throw new UnexpectedValueException(
                         sprintf(
-                            'The stream or file "%s" could not be opened in append mode: ' . $this->errorMessage,
-                            $url
-                        ) . Utils::getRecordMessageForException(
-                            $record
+                            'The stream or file "%s" could not be opened in append mode: %s%s',
+                            $url,
+                            $this->errorMessage,
+                            Utils::getRecordMessageForException($record)
                         )
                     );
                 }
